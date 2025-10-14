@@ -72,9 +72,21 @@ const createTask = () =>{
             `
         )
     })
+    resetForm()
 }
 
 //! resetting the form after displaying the task
+
+const resetForm = () =>{
+    textInput.value = "";
+    dateInput.value = "";
+    textarea.value = "";
+}
+
+(()=>{
+    data = JSON.parse(localStorage.getItem("data") || [])
+})
+
 
 //! Edit function for created TODO'S
 
