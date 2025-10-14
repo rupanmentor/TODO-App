@@ -45,3 +45,35 @@ body{
 h1,h3{
     color: white;
 }
+
+#msg{
+  margin: 15px;
+  color: red;
+}
+
+#tasks{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:15px;
+}
+
+#tasks div{
+    background-image: repeating-linear-gradient(157.5deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 22px),repeating-linear-gradient(90deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 22px),linear-gradient(90deg, hsl(333,93%,55%),hsl(45,93%,55%),hsl(117,93%,55%),hsl(189,93%,55%),hsl(261,93%,55%));
+    border-radius: 25px;
+    padding: 10px;
+    display: grid;
+    gap: 5px;
+    color: #ffd43b;
+}
+
+#tasks div .options{
+    display: flex;
+    justify-self: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+#tasks div .options i{
+    cursor: pointer;
+}
