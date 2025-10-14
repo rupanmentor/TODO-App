@@ -34,13 +34,64 @@
     <!-- base div and icon to open modal -->
     <div class="app">
       <h1 class="text-center mb-3 fw-bolder">TODO'S</h1>
-      <div id="addnew">
+      <div id="addnew" data-bs-toggle="modal" data-bs-target="#form">
         <span class="fw-bolder textstyle">Add New TODO</span>
         <i
           class="fa-solid fa-calendar-plus fa-bounce"
           style="color: #ffd43b"
         ></i>
       </div>
+
+      <!-- modal part -->
+      <!-- changing modal to form for getting user inputs -->
+      <form id="form" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5 fw-bolder">Add a New Todo</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- adding input fields for the todo -->
+              <p class="fw-bolder">TODO Title</p>
+              <input type="text" id="textInput" class="form-control" />
+              <br />
+              <p class="fw-bolder">Deadline</p>
+              <input type="date" id="dateInput" class="form-control" />
+              <br />
+              <p class="fw-bolder">Task</p>
+              <textarea
+                id="textarea"
+                cols="30"
+                rows="5"
+                class="form-control"
+              ></textarea>
+            </div>
+            <br />
+            <div id="msg"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" id="add" class="btn btn-warning">
+               Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+                  <!-- displaying the todos created -->
+        <h3 class="text-center my-3">My TODO'S</h3>
+        <div id="tasks"></div>
     </div>
 
     <script
