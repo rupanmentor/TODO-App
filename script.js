@@ -54,12 +54,11 @@ const getData = () => {
 
 //! Create Function used to create the data from local storage and display it in my todo's
 
-const createTask = () =>{
-    tasks.innerHTML = ""
-    data.map((ele,index)=>{
-        return(
-            tasks.innerHTML += `
-            <div id=${index}> 
+const createTask = () => {
+  tasks.innerHTML = "";
+  data.map((ele, index) => {
+    return (tasks.innerHTML += `
+            <div key=${index}> 
                <span class="fw-bolder">${ele.text}</span>
                 <span class="fw-bolder">${ele.date}</span>
                 <p class="fw-bold">${ele.task}</p>
@@ -69,24 +68,22 @@ const createTask = () =>{
                 </span>
             </div>
             
-            `
-        )
-    })
-    resetForm()
-}
+            `);
+  });
+  resetForm();
+};
 
 //! resetting the form after displaying the task
 
-const resetForm = () =>{
-    textInput.value = "";
-    dateInput.value = "";
-    textarea.value = "";
-}
+const resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
+};
 
-(()=>{
-    data = JSON.parse(localStorage.getItem("data") || [])
-})
-
+() => {
+  data = JSON.parse(localStorage.getItem("data") || []);
+};
 
 //! Edit function for created TODO'S
 
