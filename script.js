@@ -81,9 +81,10 @@ const resetForm = () => {
   textarea.value = "";
 };
 
-() => {
-  data = JSON.parse(localStorage.getItem("data") || []);
-};
+(()=>{
+  data = JSON.parse(localStorage.getItem("data")) || []
+  createTask();
+}) ();
 
 //! Edit function for created TODO'S
 const editTask = (e) => {
